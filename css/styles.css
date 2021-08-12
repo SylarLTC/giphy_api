@@ -1,0 +1,190 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #b2e0df;
+    height: 100vh;
+}
+
+/* Searching block */
+
+.wrapper-input-search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1em;
+}
+
+.search-container{
+    background: #fff;
+    height: 30px;
+    border-radius: 30px;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.8s;
+    /*box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+    inset -7px -7px 10px 0px rgba(0,0,0,.1),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+   text-shadow:  0px 0px 6px rgba(255,255,255,.3),
+              -4px -4px 6px rgba(116, 125, 136, .2);
+  text-shadow: 2px 2px 3px rgba(255,255,255,0.5);*/
+  box-shadow:  4px 4px 6px 0 rgba(255,255,255,.3),
+              -4px -4px 6px 0 rgba(116, 125, 136, .2), 
+    inset -4px -4px 6px 0 rgba(255,255,255,.2),
+    inset 4px 4px 6px 0 rgba(0, 0, 0, .2);
+}
+
+.search-container:hover > .search-input{
+    width: 400px;
+}
+
+.search-container .search-input{
+    background: transparent;
+    border: none;
+    outline:none;
+    width: 0px;
+    font-weight: 500;
+    font-size: 16px;
+    transition: 0.8s;
+}
+
+.search-container .search-btn .fas{
+    color: #5cbdbb;
+}
+
+@keyframes hoverShake {
+  0% {transform: skew(0deg,0deg);}
+  25% {transform: skew(5deg, 5deg);}
+  75% {transform: skew(-5deg, -5deg);}
+  100% {transform: skew(0deg,0deg);}
+}
+
+.search-container:hover{
+  animation: hoverShake 0.15s linear 3;
+}
+
+/* Loading block */
+
+.spinner {
+    width: 100px;
+    height: 50px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    text-align: center;
+}
+
+.ball {
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: inline-block;
+    animation: motion 3s infinite;
+}
+    
+.loading-text {
+    color: #fff;
+    margin-top: 5px;
+    font-family: sans-serif;
+    letter-spacing: 3px;
+    font-size: 10px;
+} 
+
+@keyframes motion {
+    0% {
+        transform: translateX(0) scale(1);
+    }
+    25% {
+        transform: translateX(-50px) scale(0.3);
+    }  
+    50% {
+        transform: translateX(0) scale(1)
+    } 
+    75% {
+        transform: translateX(50px) scale(0.3)
+    } 
+    100% {
+        transform: translateX(0) scale(1)
+    }  
+}
+
+/* Arrangement of gifs */
+
+.gif-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gif-images {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    margin-top: 2em;
+    gap: 1.5em;
+}
+
+.gif-image {
+    width: 30em;
+    height: 30em;
+    border-radius: 30px;
+    box-shadow: 0 20px 20px rgba(0,0,0, 0.2), 0 0 50px rgba(0,0,0, 0.2);
+}
+
+/* Sharing image via Telegram */
+
+.a-telegram { 
+    display: block; 
+    position: relative; 
+}
+
+.a-telegram:after { 
+    content: ''; 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    bottom: 0; 
+    background: rgba(0,0,0,.5);  
+    opacity: 0; 
+    
+}
+
+.a-telegram:hover:after { 
+    opacity: 1; 
+    /* transition: opacity 0.6s ease; */
+    border-radius: 30px;
+}
+
+.span-telegram {
+    position: absolute;
+    top: 100%;
+    left: 0%;
+    transform: translate(0%, -100%);
+    z-index: 10;
+}
+
+span > i {
+    font-size: 50px;
+    color: white;
+}
+/* 
+span[data-fading = 'fadeIn'] {
+    display: none;
+}
+
+span[data-fading = 'fadeOut'] {
+    display: block;
+} */
+
+
+
+
